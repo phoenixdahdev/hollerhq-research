@@ -84,11 +84,14 @@ SDK first, the hosted runtime second.**
 - 60-second demo video
 - Show HN with "open-source messaging SDK: SMS + WhatsApp, unified"
 
-### Phase 5: Cloud API driver (2 weekends)
+### Phase 5: Cloud API driver (~1 weekend — leveraging Kapso's library)
 
-- WhatsApp Cloud API driver as alternative to Baileys
-- Document trade-offs between drivers in docs
-- Same `MessageDriver` interface
+- Wrap [`@kapso/whatsapp-cloud-api`](https://github.com/gokapso/whatsapp-cloud-api-js)
+  (MIT, verified in `package.json`) as our Cloud API driver
+- Implement `MessageDriver` interface on top of Kapso's typed primitives
+- Document trade-offs between drivers (Baileys vs Cloud API)
+- See `ecosystem/01-kapso.md` for the full assessment, license
+  verification, and wrapper sketch
 
 ### Phase 6: Smart routing (2 weekends)
 
@@ -168,6 +171,9 @@ decide.
   momentum.
 - **Meta launches a great official Node SDK for Cloud API.** Half our
   WhatsApp value prop vanishes.
+- **Kapso extends to SMS + Baileys.** Today WhatsApp-Cloud-API-only.
+  If they widen scope, we lose the multi-channel wedge against them
+  specifically. See `ecosystem/01-kapso.md`.
 - **Baileys changes license.** Foundation problem.
 - **WhatsApp removes Web protocol entirely.** Unofficial path dies; only
   Cloud API survives.

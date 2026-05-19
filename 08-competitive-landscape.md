@@ -48,6 +48,7 @@ management, dashboards, billing, or webhook delivery.
 | **360Dialog** | Cloud API BSP | Per-message | EU enterprise |
 | **Gupshup** | BSP omnichannel | Volume-based | India-first |
 | **Twilio for WhatsApp** | Cloud API reseller | Pass-through + markup | Enterprise default |
+| **Kapso** (kapso.ai) | Cloud API + developer platform | Tiered (paid SaaS + OSS funnel) | "WhatsApp for developers" — closest direct DX competitor. WhatsApp-only, no unofficial / SMS / multi-channel. Deep dive: `ecosystem/01-kapso.md`. Their `@kapso/whatsapp-cloud-api` (MIT) is our planned Cloud API driver foundation. |
 
 WhatsApp-only space is crowded but everyone is selling hosting + UI,
 not SDK. None open source. None with a polished SDK.
@@ -168,6 +169,10 @@ one upstream integration.
 - **Twilio / Bird ship a real unified Node SDK.** Today their SDKs are
   auto-generated and dull. If they get serious about DX, our wedge
   narrows.
+- **Kapso extends to SMS or Baileys.** Today they're WhatsApp-Cloud-API-
+  only. If they add SMS and an unofficial WA driver, they become a head-
+  on competitor in our exact lane. Watch `github.com/gokapso` for new
+  repos as a signal.
 - **Novu / Knock add conversational features.** Momentum and
   infrastructure. If they pivot from notifications to conversations,
   they're well-positioned.

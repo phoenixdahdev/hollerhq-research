@@ -69,6 +69,7 @@ execute, and what the smallest meaningful product looks like.
 | [`engine/`](./engine/00-overview.md) | Background jobs, durable workflows, scheduled tasks. Trigger.dev + alternatives (Inngest, BullMQ, Temporal, Hatchet) | Trigger.dev as primary engine; OSS, TS-native, self-hostable, durable workflows |
 | [`storage/`](./storage/00-overview.md) | Postgres + ORM (Drizzle vs Prisma vs Kysely), Redis, object storage for media | Postgres + Drizzle; Redis; Cloudflare R2 (or MinIO for self-host) |
 | [`deployment/`](./deployment/00-overview.md) | Runtime requirements, hosting (Fly.io, Railway, Render, K8s, VPS), self-host distribution | Fly.io for our SaaS; Docker compose on Hetzner VPS for OSS users |
+| [`ecosystem/`](./ecosystem/00-overview.md) | Deep dives on specific projects we might leverage, integrate, or compete with | Adopt `@kapso/whatsapp-cloud-api` (MIT) as Cloud API driver foundation |
 
 ## Suggested reading order
 

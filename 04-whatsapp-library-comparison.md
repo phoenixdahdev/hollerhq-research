@@ -127,6 +127,29 @@ for portability, design the internal `WhatsAppDriver` interface around
 Baileys's capability model — it's the more constrained one in some media
 areas, so building up is easier than building down.
 
+## Cloud API client libraries — separate category
+
+The libraries above are all for the **unofficial** path. If we're using
+the official **WhatsApp Cloud API** (Phase 5 in the recommended path),
+that's a different problem: HTTP REST client, not a long-lived
+WebSocket.
+
+Top options:
+
+| Library | npm | License | Notes |
+|---|---|---|---|
+| **`@kapso/whatsapp-cloud-api`** | `@kapso/whatsapp-cloud-api` | MIT | Hand-crafted TS, Zod-validated builders, works standalone with Meta credentials. Kapso-proxy features are optional. **Strongest fit.** See `ecosystem/01-kapso.md`. |
+| **`whatsapp-api-js`** | `whatsapp-api-js` | MIT | Older, single-maintainer, narrower surface |
+| **Meta's official examples** | — | — | Raw `fetch()` snippets. Boilerplate-heavy. |
+| **Twilio SDK (for WA)** | `twilio` | MIT | If routing via Twilio's BSP — different shape entirely |
+
+**Recommendation for Phase 5:** wrap `@kapso/whatsapp-cloud-api` as our
+Cloud API driver behind the `MessageDriver` interface. Saves ~1–2 weeks
+of work building the client from scratch. License is clean (MIT,
+confirmed in `package.json`); functionality covers what we need
+(messages, templates, media, webhooks with HMAC verification, phone
+numbers, flows). Detailed assessment in `ecosystem/01-kapso.md`.
+
 ## How to peek
 
 A side-by-side memory test would settle this empirically. Rough plan:
